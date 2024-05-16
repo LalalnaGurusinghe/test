@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel.lk|service & Location</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="icon" href="fav.png" type="image/png">
+    <style>
+        * {
+            font-family: 'poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            text-transform: capitalize;
+            transition: all .2s linear;
+        }
+
+        .navbar{
+            text-align: center;
+            margin-top: 30px;
+            margin-right: 30px;
+            
+        }
+        nav a {
+            margin-left: 30px;
+            position: relative;
+            font-size: 1.1em;
+            color: #fdfdfd;
+            text-decoration: none;
+            padding: 6px 20px;
+            transition: .5s;
+        }
+        nav a:hover {
+            color: #0ef;
+            
+        }
+        nav a span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            border-bottom: 2px solid #0ef;
+            border-radius: 15px;
+            transform: scale(0) translateY(50px);
+            opacity: 0;
+            transition: .5s;
+        }
+        nav a:hover span {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+        }
+
+        .fa-user{
+            font-size: 30px;
+            margin-top: 4px;
+            margin-left: 30px;
+            color: aliceblue;
+        }
+
+        .fa-user:hover{
+            transform: scale(1.2);
+            color:#0ef ;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        body {
+            background: #111;
+        }
+
+        .section1 {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            padding: 1%;
+            display: flex;
+            justify-content: center;
+
+            .content {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 30px;
+            }
+
+            .content h1 {
+                color: white;
+                text-transform: uppercase;
+                position: absolute;
+
+            }
+        }
+
+
+
+        .backVideo {
+            object-fit: fill;
+            position: fixed;
+            filter: blur(0px);
+            width: 100%;
+            height: 100vh;
+            left: 0;
+            padding: 50px 80px 10px 80px;
+
+        }
+
+        .btn {
+            font-size: 13px;
+            color: rgb(1, 186, 233);
+            border: 1px solid rgb(1, 186, 233);
+            border-radius: 5rem;
+            cursor: pointer;
+            background: none;
+            padding: 10px 10px;
+
+        }
+
+        .btn:hover {
+            background-color: rgb(1, 186, 233);
+            color: #111;
+        }
+
+        .inputBox {
+            input {
+                padding: 10px;
+                color: white;
+                background-color: #111;
+                border: 1px solid rgb(1, 186, 233);
+                border-radius: 5rem;
+                margin-right: 10px;
+                width: 250px;
+            }
+        }
+
+        .section2 {
+            width: 100%;
+            background-color: #111;
+            position: relative;
+            padding-top: 40px;
+            padding-bottom: 40px;
+
+            .part1 {
+                display: flex;
+                justify-content: center;
+                padding-bottom: 50px;
+
+
+            }
+
+            .part2 {
+
+                .heading {
+                    color: white;
+                    text-align: center;
+                }
+
+                .boxContent {
+                    display: grid;
+                    grid-template-columns: auto auto auto auto;
+                    justify-content: center;
+
+                    padding: 20px;
+                    gap: 20px;
+
+                    .image {
+                        width: 100%;
+                        height: 25rem;
+                        overflow: hidden;
+
+                        img {
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    .box {
+                        border-radius: 1rem;
+                        overflow: hidden;
+                        background: #222;
+                        width: 350px;
+                        height: 360px;
+                    }
+
+                    .card {
+                        height: 100%;
+                        width: 100%;
+                        position: relative;
+                        transition: 1500ms;
+                        transform-style: preserve-3d;
+                    }
+
+                    .box:hover>.card {
+                        cursor: pointer;
+                        transform: rotateY(180deg);
+                    }
+
+                    .front,
+                    .back {
+                        height: 100%;
+                        width: 100%;
+                        position: absolute;
+                        backface-visibility: hidden;
+                    }
+
+                    .back {
+                        background-color: #222;
+                        transform: rotateY(180deg);
+                    }
+
+                    .content {
+                        padding: 20px;
+
+                        h3 {
+                            color: rgb(1, 186, 233);
+                            font-weight: 500;
+                            text-align: center;
+                            font-size: 20px;
+                            padding: 10px;
+                            padding-top: 20px;
+                        }
+
+                        p {
+                            color: white;
+                            font-size: 12px;
+                            text-align: center;
+                            padding-top: 30px;
+
+                        }
+
+                        a {
+                            display: flex;
+                            justify-content: center;
+                        }
+                    }
+                }
+            }
+
+            .part3 {
+
+                .heading {
+                    color: white;
+                    text-align: center;
+                    padding-top: 20px;
+                }
+
+                .boxContent {
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    margin-top: 20px;
+                    padding: 20px;
+                    gap: 20px;
+
+
+                    .box {
+
+                        overflow: hidden;
+                        background: #222;
+                        width: 250px;
+                        height: 550px;
+                    }
+
+                    .image {
+                        width: 100%;
+                        height: 20rem;
+                        padding-top: 10px;
+
+                        img {
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+
+                        }
+                    }
+
+                    .content {
+                        h2 {
+                            color: rgb(1, 186, 233);
+                            font-weight: 500;
+                            text-align: center;
+                            font-size: 20px;
+                            padding: 10px;
+                        }
+
+                        p {
+                            color: white;
+                            font-size: 12px;
+                            text-align: center;
+                            padding: 10px;
+                        }
+
+                    }
+                }
+
+                .box:hover {
+                    cursor: pointer;
+                    transform: scale(1.08);
+                }
+            }
+
+            form {
+                display: flex;
+                align-items: flex-end;
+                flex-wrap: wrap;
+
+            }
+        }
+
+        .line1 {
+            font-size: 17px;
+            font-weight: 300;
+            color: rgb(1, 186, 233);
+        }
+
+        .line2 {
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        .foot {
+            max-width: 100%;
+            background: #111;
+            position: relative;
+
+            footer {
+                .container {
+                    max-width: 1170px;
+                    margin: auto;
+                    
+                }
+
+                .row {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+
+                ul {
+                    list-style: none;
+                }
+
+                .footer {
+                    background-color: #24262b;
+                    padding: 70px 0;
+                }
+
+                .footer-col {
+                    width: 25%;
+                    padding: 0 15px;
+                }
+
+                .footer-col h4 {
+                    font-size: 18px;
+                    color: #ffffff;
+                    text-transform: capitalize;
+                    margin-bottom: 35px;
+                    font-weight: 500;
+                    position: relative;
+                }
+
+                .footer-col h4::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: -10px;
+                    background-color: #1dc9f0;
+                    height: 2px;
+                    box-sizing: border-box;
+                    width: 50px;
+                }
+
+                .footer-col ul li:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+
+                .footer-col ul li a {
+                    font-size: 16px;
+                    text-transform: capitalize;
+                    color: #ffffff;
+                    text-decoration: none;
+                    font-weight: 300;
+                    color: #bbbbbb;
+                    display: block;
+                    transition: all 0.3s ease;
+                }
+
+                .footer-col ul li a:hover {
+                    color: #ffffff;
+                    padding-left: 8px;
+                }
+
+                .footer-col .social-links a {
+                    display: inline-block;
+                    height: 40px;
+                    width: 40px;
+                    background-color: rgba(255, 255, 255, 0.2);
+                    margin: 0 10px 10px 0;
+                    text-align: center;
+                    line-height: 40px;
+                    border-radius: 50%;
+                    color: #ffffff;
+                    transition: all 0.5s ease;
+                }
+
+                .footer-col .social-links a:hover {
+                    color: #24262b;
+                    background-color: #ffffff;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <nav>
+                <a href="index.html" class="a1">Home<span></span></a>
+                <a href="booking.html">Packages<span></span></a>
+                <a href="main.html">Services&nbsp&&nbsp;Locations<span></span></a>
+                <a href="contact.html">Contact Us<span></span></a>
+                <a href="gallery.html">Gallery<span></span></a>
+                <a href="develper.html">Our Members<span></span></a>
+                <a href="log2.html"><i class="fa-regular fa-user"></i></a></i>
+            </nav>
+            
+        </div>
+        
+    </header>
+    <div class="container">
+        <div class="section1">
+            <div class="bgVideo">
+                <video loop autoplay muted class="backVideo" src="img/bg-video.mp4"></video>
+            </div>
+            <div class="content">
+                <h1>an island escape awits you..!</h1>
+            </div>
+        </div>
+        <div class="section2">
+            <div class="part1">
+                <form action="">
+                    <div class="inputBox">
+                        <label for="inputbox"></label>
+                        <input type="text" placeholder="where to?">
+                    </div>
+                    <input type="submit" class="btn " value="find now">
+
+                </form>
+            </div>
+            <div class="part2">
+                <div class="heading">
+                    <h1 class="line1">locations</h1>
+                    <h1 class="line2">make your destination</h1>
+                </div>
+                <div class="boxContent">
+                    <div class="box">
+                        <div class="card">
+                            <div class="front">
+                                <div class="image">
+                                    <img src="img/colombo.jpg" alt="t1">
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="content">
+                                    <h3>colombo</h3>
+                                    <p>Welcome to Colombo! Explore the vibrant capital of Sri Lanka, where history meets
+                                        modernity. Discover its charm through bustling markets, serene temples, and
+                                        pristine beaches. Start your adventure now!</p>
+                                    <a href="#"><i class=""><input type="submit" class="btn " value="read more"></i></a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="card">
+                            <div class="front">
+                                <div class="image">
+                                    <img src="img/kandy.jpg" alt="t1">
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="content">
+                                    <h3>kandy</h3>
+                                    <p>Welcome to Kandy, the cultural heart of Sri Lanka!Sri Lanka's cultural gem!
+                                        Explore sacred temples, lush landscapes, and vibrant traditions in this historic
+                                        city nestled among green hills.</p>
+                                    <a href="#"><i class=""><input type="submit" class="btn " value="read more"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="card">
+                            <div class="front">
+                                <div class="image">
+                                    <img src="img/anuradapura.jpg" alt="t1">
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="content">
+                                    <h3>anuradhapura</h3>
+                                    <p>Welcome to Anuradhapura, a UNESCO World Heritage Site in Sri Lanka, offers a
+                                        glimpse into a civilization over two millennia old. Explore ancient ruins and
+                                        serene lakes, immersing yourself in its spiritual and historical richness.</p>
+                                    <a href="#"><i class=""><input type="submit" class="btn " value="read more"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="card">
+                            <div class="front">
+                                <div class="image">
+                                    <img src="img/polonnaruwa.jpg" alt="t1">
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="content">
+                                    <h3>polonnaruwa</h3>
+                                    <p>Welcome to Polonnaruwa, a UNESCO World Heritage Site in Sri Lanka, blends ancient
+                                        history with natural beauty. Explore ruins of palaces, temples, and statues from
+                                        the Polonnaruwa Kingdom. Amid lush greenery and tranquil reservoirs, experience
+                                        the timeless charm of this cultural treasure.</p>
+                                    <a href="#"><i class=""><input type="submit" class="btn " value="read more"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="card">
+                            <div class="front">
+                                <div class="image">
+                                    <img src="img/galle.jpg" alt="t1">
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="content">
+                                    <h3>galle</h3>
+                                    <p>Welcome to Galle, a coastal city in Sri Lanka, is famed for its 17th-century
+                                        Dutch fort, a UNESCO World Heritage Site. Explore its historic streets, lined
+                                        with charming boutiques and cafes. Beyond the fort, pristine beaches offer
+                                        relaxation and water sports. Galle is a vibrant blend of history and coastal
+                                        beauty.</p>
+                                    <a href="#"><i class=""><input type="submit" class="btn " value="read more"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="card">
+                            <div class="front">
+                                <div class="image">
+                                    <img src="img/mirissa.jpg" alt="t1">
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="content">
+                                    <h3>mirissa</h3>
+                                    <p>Welcome to Mirissa, a coastal gem in Sri Lanka, boasts pristine beaches and a
+                                        relaxed atmosphere. Enjoy surfing, snorkeling, and whale watching by day, and
+                                        savor fresh seafood with ocean views by night. It's the perfect destination for
+                                        tropical relaxation and beachside bliss.</p>
+                                    <a href="#"><i class=""><input type="submit" class="btn " value="read more"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="card">
+                            <div class="front">
+                                <div class="image">
+                                    <img src="img/ella.jpg" alt="t1">
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="content">
+                                    <h3>ella</h3>
+                                    <p>welcome to Ella, a picturesque town in Sri Lanka's hill country, offers stunning
+                                        views of tea plantations, waterfalls, and misty mountains. Hike to Ella Rock or
+                                        visit the Nine Arch Bridge for iconic vistas. Relax with a cup of Ceylon tea
+                                        amidst serene surroundings. It's a perfect retreat for nature lovers and
+                                        adventurers.</p>
+                                    <a href="#"><i class=""><input type="submit" class="btn " value="read more"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="card">
+                            <div class="front">
+                                <div class="image">
+                                    <img src="img/horton plains.jpg" alt="t1">
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="content">
+                                    <h3>horton plains</h3>
+                                    <p>welcome to Horton Plains, Sri Lanka's captivating natural reserve, offers diverse
+                                        landscapes perfect for hiking and nature exploration. Visit World's End for
+                                        panoramic views and Baker's Falls for cascading beauty. It's an unforgettable
+                                        adventure in untouched wilderness.</p>
+                                    <a href="#"><i class=""><input type="submit" class="btn " value="read more"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="part3">
+                <div class="heading">
+                    <h1 class="line1">services</h1>
+                    <h1 class="line2">make your decision</h1>
+                </div>
+                <div class="boxContent">
+                    <div class="box">
+                        <div class="image">
+                            <img src="img/graypack2.png" alt="package1">
+                        </div>
+                        <div class="content">
+                            <h2>package 1</h2>
+                            <p>Embark on exhilarating motorcycle tours or outdoor adventures with camping and hiking
+                                experiences. Discover new cultures and escape the ordinary with unforgettable journeys.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="image">
+                            <img src="img/graypack3.png" alt="package1">
+                        </div>
+                        <div class="content">
+                            <h2>package 2</h2>
+                            <p>Embark on rugged jeep rides through remote landscapes, then unwind with scenic train
+                                journeys. Camp under stars, savor local cuisine.</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="image">
+                            <img src="img/graypack1.png" alt="package1">
+                        </div>
+                        <div class="content">
+                            <h2>package 3</h2>
+                            <p>Spend your days exploring with a wildlife safari or scenic drives, and come back to
+                                comfortable stays at the hotel for a refreshing dip in the pool.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="foot">
+            <footer class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="footer-col">
+                            <h4>company</h4>
+                            <ul>
+                                <li><a href="#">about us</a></li>
+                                <li><a href="#">our services</a></li>
+                                <li><a href="#">privacy policy</a></li>
+                                <li><a href="#">contact us</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>get help</h4>
+                            <ul>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">shipping</a></li>
+                                <li><a href="#">returns</a></li>
+                                <li><a href="#">order status</a></li>
+                                <li><a href="#">payment options</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Areas</h4>
+                            <ul>
+                                <li><a href="#">Traveling</a></li>
+                                <li><a href="#">Mounting</a></li>
+                                <li><a href="#">Rafting</a></li>
+                                <li><a href="#">Adventures</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>follow us</h4>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

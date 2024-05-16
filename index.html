@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRavel.lk|Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="fav.png" type="image/png">
+    
+</head>
+<body>
+   
+    <!--------cursor-----------------------------------------------------------> 
+    <div class="cursor"></div>
+
+    <script type="text/javascript">
+        const cursor = document.querySelector(".cursor");
+        var timeout;
+
+        document.addEventListener("mousemove", (e) =>{
+            let x = e.clientX;
+            let y = e.clientY;
+
+            cursor.style.top = y + "px";
+            cursor.style.left = x + "px";
+            cursor.style.display = "block";
+
+            function mouseStopped(){
+                cursor.style.display = "none";
+            }
+            clearTimeout(timeout);
+            timeout = setTimeout(mouseStopped, 1000);
+        });
+
+        document.addEventListener("mouseout", () =>{
+            cursor.style.display = "none";
+        });
+     <!-----cursor end---------------------------------------------------------->
+    </script> 
+    <header>
+        <div class="logo">TRavel<span>.lk</span></div>
+        <div class="navbar">
+            <nav>
+                <a href="index.html" class="a1">Home<span></span></a>
+                <a href="main.html">Services&nbsp&&nbsp;Locations<span></span></a>
+                <a href="booking.html">Packages<span></span></a>
+                <a href="contact.html">Contact Us<span></span></a>
+                <a href="gallery.html">Gallery<span></span></a>
+                <a href="develper.html">Our Members<span></span></a>
+                
+            </nav>
+        </div>
+        
+        <a href="log2.html"><i class="fa-regular fa-user"></i></a></i>
+    </header>
+
+    
+
+    <div class="slider">
+        
+        <div class="list">
+            <div class="item active">
+                <img src="images/s3.jpg">
+                <div class="content">
+                    <p>Location</p>
+                    <h2>SIGIRIYA</h2>
+                    <p>Unveil Sigiriya's ancient allure, with majestic rock formations, lush greenery, ancient frescoes, and serene gardens in Sri Lanka's heart.</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/k2.jpg">
+                <div class="content">
+                    <p>Location</p>
+                    <h2>Kandy</h2>
+                    <p>Discover Kandy's scenic beauty, historic landmarks, vibrant markets, and cultural significance, blending tradition with modernity in Sri Lanka's heart.</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/n2'.jpg">
+                <div class="content">
+                    <p>Location</p>
+                    <h2>NUWARAELIYA</h2>
+                    <p>Explore Nuwara Eliya's scenic beauty, lush landscapes, historic charm, and cool climate, nestled amidst Sri Lanka's picturesque hills.</p>
+
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/galle.jpg">
+                <div class="content">
+                    <p>Location</p>
+                    <h2>GALLE</h2>
+                    <p>Discover Galle's coastal beauty, historic fort, cobbled streets, and vibrant atmosphere, offering a charming blend of history and modernity in Sri Lanka.</p>
+
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/g22.jpg">
+                <div class="content">
+                    <p>Location</p>
+                    <h2>ANURADAPURA</h2>
+                    <p>Uncover Anuradhapura's ancient wonders, sacred temples, serene surroundings, and rich cultural heritage, reflecting Sri Lanka's historical grandeur and spiritual significance.</p>
+
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/demodara.jpg" alt="sigiriya">
+                <div class="content">
+                    <p>Location</p>
+                    <h2>DEMODARA</h2>
+                    <p>Explore Demodara's rural charm, scenic landscapes, tea plantations, and iconic Nine Arch Bridge, offering a tranquil retreat in Sri Lanka's hill country.</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/jaffna.jpg" alt="jaffna">
+                <div class="content">
+                    <p>Location</p>
+                    <h2>JAFFNA</h2>
+                    <p>Discover Jaffna's cultural richness, historic landmarks, vibrant markets, and culinary delights, showcasing the unique heritage of northern Sri Lanka.</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/g21.jpg" alt="yala">
+                <div class="content">
+                    <p>Location</p>
+                    <h2>YALA</h2>
+                    <p>Experience Yala's wild beauty, diverse ecosystems, abundant wildlife, and thrilling safaris, offering an unforgettable adventure in Sri Lanka's wilderness.</p>
+                </div>
+            </div>
+        </div>
+        <!-- button arrows -->
+        <div class="arrows">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+        <!-- thumbnail -->
+        <div class="thumbnail">
+            <div class="item active">
+                <img src="images/s3.jpg">
+                <div class="content">
+                    Sigiriya
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/k2.jpg">
+                <div class="content">
+                    Kandy
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/n2'.jpg">
+                <div class="content">
+                    Nuwaraeliya
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/galle.jpg">
+                <div class="content">
+                    Galle
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/g22.jpg">
+                <div class="content">
+                    Anuradhapura
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/demodara.jpg">
+                <div class="content">
+                    Demodara
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/jaffna.jpg">
+                <div class="content">
+                    Jaffna
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/g21.jpg">
+                <div class="content">
+                    Yala
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!------footer----------------->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Areas</h4>
+                    <ul>
+                        <li><a href="#">Traveling</a></li>
+                        <li><a href="#">Mounting</a></li>
+                        <li><a href="#">Rafting</a></li>
+                        <li><a href="#">Adventures</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </footer>
+
+    <script src="app.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
